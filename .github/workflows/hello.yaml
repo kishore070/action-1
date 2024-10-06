@@ -23,9 +23,10 @@ jobs:
        run: echo "test world" 
 
      - name: Test File Exists
-       run: grep -i "for" dragon.txt
+       run: grep -i "dragon" dragon.txt
 
   deploy_jobs:
+     needs: [build_jobs,test_jobs]
      runs-on: ubuntu-latest
      steps:
      - name: deploy world
