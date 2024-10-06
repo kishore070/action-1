@@ -8,3 +8,15 @@ jobs:
      steps:
      - name: Hello world
        run: echo "Hello world"
+
+  test_jobs:
+     runs-on: ubuntu-latest
+     steps:
+     - name: test world
+       run: echo "test world" 
+
+  deploy_jobs:
+     runs-on: ubuntu-latest
+     steps:
+     - name: deploy world
+       run: echo "deploy world" 
