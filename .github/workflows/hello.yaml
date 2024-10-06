@@ -28,13 +28,13 @@ jobs:
      - name: test world
        run: echo "test world" 
 
-     - name: Test File Exists
-       run: grep -i "dragon" dragon.txt
-
      - name: Download Dragon text file
        uses: actions/download-artifact@v3
        with:
         name: dragon-text-file
+
+     - name: Test File Exists
+       run: grep -i "dragon" dragon.txt
 
   deploy_jobs:
      needs: [build_jobs,test_jobs]
@@ -43,10 +43,12 @@ jobs:
      - name: deploy world
        run: echo "deploy world" 
        
-     - name: Read File
-       run: cat dragon.txt
+     
 
      - name: Download Dragon text file
        uses: actions/download-artifact@v3
        with:
         name: dragon-text-file
+
+     - name: Read File
+       run: cat dragon.txt
