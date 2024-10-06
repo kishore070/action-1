@@ -10,7 +10,7 @@ jobs:
        run: echo "Hello world"
 
      - name: Execute Cowsay CMD
-       run: cowsay -f dragon "Run for cover , I am a Dragon...RAWR"	
+       run: cowsay -f dragon "Run for cover , I am a Dragon...RAWR"	>> dragon.txt
 
   test_jobs:
      runs-on: ubuntu-latest
